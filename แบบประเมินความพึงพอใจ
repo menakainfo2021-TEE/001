@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+  	<title>แบบประเมินความพึงพอใจ - เมนกา คาร์แคร์</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #1a4d2e;
+        }
+        p {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #1a4d2e;
+            padding-bottom: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .rating-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .rating-table th, .rating-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .rating-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .rating-table td:first-child {
+            text-align: left;
+            width: 50%;
+        }
+        .rating-cell {
+            white-space: nowrap;
+        }
+        .rating-cell input[type="radio"] {
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #1a4d2e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #2c6e49;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>แบบประเมินความพึงพอใจการใช้บริการ</h1>
+        <h2>ร้าน เมนกา คาร์แคร์</h2>
+        <p>เรียนลูกค้าผู้มีอุปการคุณทุกท่าน แบบประเมินฉบับนี้จัดทำขึ้นเพื่อนำข้อมูลไปปรับปรุงคุณภาพการบริการของร้านเราให้ดียิ่งขึ้นไป ขอขอบพระคุณที่สละเวลาให้ข้อมูลที่เป็นประโยชน์</p>
+
+        <form id="feedbackForm">
+            <div class="section">
+                <div class="section-title">ส่วนที่ 1: ข้อมูลทั่วไปของลูกค้า</div>
+                <div class="form-group">
+                    <label for="occupation">อาชีพ:</label>
+                    <select id="occupation" name="occupation">
+                        <option value="">-- กรุณาเลือก --</option>
+                        <option value="student">นักเรียน/นักศึกษา</option>
+                        <option value="private-employee">พนักงานบริษัทเอกชน</option>
+                        <option value="government-employee">ข้าราชการ/พนักงานรัฐวิสาหกิจ</option>
+                        <option value="business-owner">ธุรกิจส่วนตัว/เจ้าของกิจการ</option>
+                        <option value="other">อื่นๆ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="otherOccupation">อื่นๆ (โปรดระบุ):</label>
+                    <input type="text" id="otherOccupation" name="otherOccupation">
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">เบอร์โทรศัพท์ :</label>
+                    <input type="text" id="phoneNumber" name="phoneNumber">
+                    <small>(เพื่อประโยชน์ในการรับข่าวสาร โปรโมชั่น หรือติดต่อกลับในกรณีฉุกเฉิน และร่วมสนุกรับของรางวัลมากมาย)</small>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">ส่วนที่ 2: การประเมินคุณภาพการให้บริการ</div>
+                <p style="text-align:left; font-size:12px;">(โปรดใส่เครื่องหมาย ✓ ในช่องที่ตรงกับความพึงพอใจของท่านมากที่สุด)</p>
+                <table class="rating-table">
+                    <thead>
+                        <tr>
+                            <th>หัวข้อการประเมิน</th>
+                            <th>ไม่พอใจอย่างยิ่ง (1)</th>
+                            <th>ไม่พอใจ (2)</th>
+                            <th>เฉยๆ (3)</th>
+                            <th>พอใจ (4)</th>
+                            <th>พอใจอย่างยิ่ง (5)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. คุณภาพการล้างรถ:</td>
+                            <td colspan="5"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;- ความสะอาดของตัวถังรถ</td>
+                            <td class="rating-cell"><input type="radio" name="cleanliness_body" value="1"></td>
+                            <td class="rating-cell"><input type="radio" name="cleanliness_body" value="2"></td>
+                            <td class="rating-cell"><input type="radio" name="cleanliness_body" value="3"></td>
+                            <td class="rating-cell"><input type="radio" name="cleanliness_body" value="4"></td>
+                            <td class="rating-cell"><input type="radio" name="cleanliness_body" value="5"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;- ความสะอาดของภายในรถ</td>
+                            <td class="rating-cell"><input type="radio" name="cleanliness_interior" value="1"></td>
+                            <td class="rating-cell"><input type="radio" name="cleanliness_interior" value="2"></td>
+                            <td class="rating-cell"><input type="radio" name="cleanliness_interior" value="3"></td>
+                            <td class="rating-cell"><input type="radio" name="cleanliness_interior" value="4"></td>
+                            <td class="rating-cell"><input type="radio" name="cleanliness_interior" value="5"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;- ความเงางามหลังการล้าง</td>
+                            <td class="rating-cell"><input type="radio" name="shine" value="1"></td>
+                            <td class="rating-cell"><input type="radio" name="shine" value="2"></td>
+                            <td class="rating-cell"><input type="radio" name="shine" value="3"></td>
+                            <td class="rating-cell"><input type="radio" name="shine" value="4"></td>
+                            <td class="rating-cell"><input type="radio" name="shine" value="5"></td>
+                        </tr>
+                        <tr>
+                            <td>2. บริการของพนักงาน:</td>
+                            <td colspan="5"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;- ความสุภาพ/เป็นกันเอง</td>
+                            <td class="rating-cell"><input type="radio" name="staff_courtesy" value="1"></td>
+                            <td class="rating-cell"><input type="radio" name="staff_courtesy" value="2"></td>
+                            <td class="rating-cell"><input type="radio" name="staff_courtesy" value="3"></td>
+                            <td class="rating-cell"><input type="radio" name="staff_courtesy" value="4"></td>
+                            <td class="rating-cell"><input type="radio" name="staff_courtesy" value="5"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;- ความรวดเร็วในการให้บริการ</td>
+                            <td class="rating-cell"><input type="radio" name="staff_speed" value="1"></td>
+                            <td class="rating-cell"><input type="radio" name="staff_speed" value="2"></td>
+                            <td class="rating-cell"><input type="radio" name="staff_speed" value="3"></td>
+                            <td class="rating-cell"><input type="radio" name="staff_speed" value="4"></td>
+                            <td class="rating-cell"><input type="radio" name="staff_speed" value="5"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;- ความรู้/ความเข้าใจในบริการ</td>
+                            <td class="rating-cell"><input type="radio" name="staff_knowledge" value="1"></td>
+                            <td class="rating-cell"><input type="radio" name="staff_knowledge" value="2"></td>
+                            <td class="rating-cell"><input type="radio" name="staff_knowledge" value="3"></td>
+                            <td class="rating-cell"><input type="radio" name="staff_knowledge" value="4"></td>
+                            <td class="rating-cell"><input type="radio" name="staff_knowledge" value="5"></td>
+                        </tr>
+                        <tr>
+                            <td>3. ราคา:</td>
+                            <td colspan="5"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;- ความเหมาะสมของราคา</td>
+                            <td class="rating-cell"><input type="radio" name="price" value="1"></td>
+                            <td class="rating-cell"><input type="radio" name="price" value="2"></td>
+                            <td class="rating-cell"><input type="radio" name="price" value="3"></td>
+                            <td class="rating-cell"><input type="radio" name="price" value="4"></td>
+                            <td class="rating-cell"><input type="radio" name="price" value="5"></td>
+                        </tr>
+                        <tr>
+                            <td>4. สิ่งอำนวยความสะดวก:</td>
+                            <td colspan="5"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;- ความสะอาด/ความเป็นระเบียบ</td>
+                            <td class="rating-cell"><input type="radio" name="facility_cleanliness" value="1"></td>
+                            <td class="rating-cell"><input type="radio" name="facility_cleanliness" value="2"></td>
+                            <td class="rating-cell"><input type="radio" name="facility_cleanliness" value="3"></td>
+                            <td class="rating-cell"><input type="radio" name="facility_cleanliness" value="4"></td>
+                            <td class="rating-cell"><input type="radio" name="facility_cleanliness" value="5"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;- พื้นที่รับรองลูกค้า</td>
+                            <td class="rating-cell"><input type="radio" name="waiting_area" value="1"></td>
+                            <td class="rating-cell"><input type="radio" name="waiting_area" value="2"></td>
+                            <td class="rating-cell"><input type="radio" name="waiting_area" value="3"></td>
+                            <td class="rating-cell"><input type="radio" name="waiting_area" value="4"></td>
+                            <td class="rating-cell"><input type="radio" name="waiting_area" value="5"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <div class="section-title">ส่วนที่ 3: ข้อเสนอแนะและคำแนะนำเพิ่มเติม</div>
+                <div class="form-group">
+                    <label for="suggestions">โปรดระบุข้อเสนอแนะหรือความคิดเห็นอื่น ๆ เพื่อให้เรานำไปปรับปรุงบริการให้ดีขึ้น:</label>
+                    <textarea id="suggestions" name="suggestions" rows="5"></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">ส่งแบบประเมิน</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // ป้องกันการส่งฟอร์มตามค่าเริ่มต้น
+
+            // รวบรวมข้อมูลจากฟอร์ม
+            const formData = new FormData(this);
+            const data = {https://docs.google.com/document/d/1Edzk1yp7zOegcwfsAYs1GMuv2ZukmLO-Cry9_lMKHe8/edit?tab=t.02:34 23/4/2569};
+
+            // ดึงข้อมูลในรูปแบบ key-value
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // แสดงข้อมูลที่รวบรวมได้ใน Console ของเบราว์เซอร์
+            console.log('--- ข้อมูลแบบประเมินที่ลูกค้าส่ง ---');
+            console.log('อาชีพ:', data.occupation);
+            if (data.occupation === 'other') {
+                console.log('อาชีพอื่นๆ:', data.otherOccupation);
+            }
+            console.log('เบอร์โทรศัพท์:', data.phoneNumber);
+            console.log('--- การประเมินคุณภาพ ---');
+            console.log('ความสะอาดตัวถัง:', data.cleanliness_body);
+            console.log('ความสะอาดภายใน:', data.cleanliness_interior);
+            console.log('ความเงางามหลังล้าง:', data.shine);
+            console.log('ความสุภาพพนักงาน:', data.staff_courtesy);
+            console.log('ความรวดเร็ว:', data.staff_speed);
+            console.log('ความรู้พนักงาน:', data.staff_knowledge);
+            console.log('ความเหมาะสมราคา:', data.price);
+            console.log('ความสะอาดร้าน:', data.facility_cleanliness);
+            console.log('พื้นที่รับรอง:', data.waiting_area);
+            console.log('--- ข้อเสนอแนะ ---');
+            console.log('ข้อเสนอแนะ:', data.suggestions);
+            console.log('------------------------------------');
+
+            // สามารถเพิ่มโค้ดในส่วนนี้เพื่อส่งข้อมูลไปยัง Server หรือ Google Sheets ได้
+            alert('ขอบคุณสำหรับข้อมูลแบบประเมิน เราจะนำไปปรับปรุงการให้บริการให้ดียิ่งขึ้นครับ!');
+        });
+    </script>
+
+</body>
+</html>
